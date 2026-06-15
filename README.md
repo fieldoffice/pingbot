@@ -1,0 +1,2 @@
+# pingbot
+Simple uptime monitor
