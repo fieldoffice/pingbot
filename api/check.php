@@ -57,7 +57,7 @@ function checkSite(array &$site): array {
         CURLOPT_MAXREDIRS      => 5,
         CURLOPT_TIMEOUT        => 15,          // 15-second timeout
         CURLOPT_CONNECTTIMEOUT => 10,
-        CURLOPT_USERAGENT      => 'UptimeMonitor/1.0',
+        CURLOPT_USERAGENT      => 'pingbot/1.0',
         CURLOPT_SSL_VERIFYPEER => true,
         CURLOPT_NOBODY         => true,        // HEAD request — faster
     ]);
