@@ -5,7 +5,7 @@ A lightweight self-hosted uptime monitoring service. Pings your sites every 5 mi
 ## File structure
 
 ```
-uptime-monitor/
+pingbot/
 ├── index.html          ← Dashboard (the UI)
 ├── api/
 │   ├── sites.php       ← REST API: list / add / delete sites
