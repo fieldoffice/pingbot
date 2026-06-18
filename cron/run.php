@@ -108,12 +108,12 @@ function sendDownAlert(array $site, int $httpCode, string $curlError): void {
   <tr><td style='padding:8px 0;color:#666;width:130px'>URL</td><td><a href='{$url}'>{$url}</a></td></tr>
   <tr><td style='padding:8px 0;color:#666'>Reason</td><td style='color:#f85149'>{$error}</td></tr>
 </table>
-<p style='margin-top:24px;font-size:13px;color:#888'>You'll receive another email when {$name} comes back online.<br>— Uptime Monitor</p>
+<p style='margin-top:24px;font-size:13px;color:#888'>You'll receive another email when {$name} comes back online.<br>— Pingbot</p>
 </body></html>";
 
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: Uptime Monitor <monitor@" . gethostname() . ">\r\n";
+    $headers .= "From: Pingbot <monitor@" . gethostname() . ">\r\n";
 
     if (mail($to, $subject, $message, $headers)) {
         logLine("Down alert → {$to} for {$url}");
@@ -138,12 +138,12 @@ function sendRecoveryAlert(array $site, int $responseTime): void {
   <tr><td style='padding:8px 0;color:#666;width:130px'>URL</td><td><a href='{$url}'>{$url}</a></td></tr>
   <tr><td style='padding:8px 0;color:#666'>Response time</td><td style='color:#3fb950'>{$responseTime}ms</td></tr>
 </table>
-<p style='margin-top:24px;font-size:13px;color:#888'>— Uptime Monitor</p>
+<p style='margin-top:24px;font-size:13px;color:#888'>— Pingbot</p>
 </body></html>";
 
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: Uptime Monitor <monitor@" . gethostname() . ">\r\n";
+    $headers .= "From: Pingbot <monitor@" . gethostname() . ">\r\n";
 
     mail($to, $subject, $message, $headers);
     logLine("Recovery email → {$to} for {$url}");
